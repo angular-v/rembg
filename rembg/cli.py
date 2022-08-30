@@ -1,3 +1,4 @@
+import os
 import pathlib
 import sys
 import time
@@ -244,7 +245,7 @@ def p(
 @click.option(
     "-p",
     "--port",
-    default=5000,
+    default=os.getenv("PORT", default=5000),
     type=int,
     show_default=True,
     help="port",
